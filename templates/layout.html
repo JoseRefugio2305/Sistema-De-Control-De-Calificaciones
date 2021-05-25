@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sistema de Control de Calificaciones</title>
+    <!-- BOOSTRAP 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='grupos64.png')}}" />
+  </head>
+  <body>
+
+    <!-- NAVIGATION  -->
+    <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-dark">
+      <a class="navbar-brand px-md-5 my-1" id="Titulonav" width="280px" heigth = "150px" href="/">Sistema de Control de Calificaciones</a>
+      <button class="navbar-toggler mt-2" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars text-info"></span>
+      </button>
+      <div class="collapse navbar-collapse pr-5" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto" id="menuinicioLog">
+            <li class="nav-item"><a href="/" class="nav-link" id="Inicio"><b>Inicio</b></a></li>
+            <li class="nav-item"><a href="/" class="nav-link" id="Inicio"><b>Acerca de</b></a></li>
+            <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#modalLogin" id="btniniciarsesion">
+              Iniciar Sesión </button>
+            <!--<li class="nav-item"><a href="../Bolsa de trabajo/index.php" class="nav-link">Bolsa de Trabajo</a></li>
+            <li class="nav-item"><a href="../Nueva_oferta/New_offer.php" class="nav-link"> Añadir oferta laboral</a></li>-->
+            
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container pt-4"> <!-- pt 4 realiza una separacion entre el navegador de arriba y este
+    div  -->
+      <!-- Todas las templates que llamen a este layout heredaran el estilo que este crea y demas atributos
+      gracias a este block body les agregae una cabeza (head) y un footer -->
+      {% block body %}
+      {% endblock %}
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-dark pt-1">
+      <p class="text-center text-white m-0 p-2">Sistema de Control de Calificaciones Desarrollado en: Flask y Bootstrap</p>
+      <p class="text-center text-white m-0 p-2">Proyecto Escolar Sin Fines De Lucro</p>
+    </footer>
+
+
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="modalLoginLabel">Inicio de Sesion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <input type="email" class = "form-control"placeholder="Correo electronico">
+                    <input type="password" class = "form-control"placeholder="Contrasena">
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary">Iniciar Sesion</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+    <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+  </body>
+</html>

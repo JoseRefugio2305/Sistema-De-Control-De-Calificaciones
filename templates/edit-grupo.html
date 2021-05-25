@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %} <!-- Todo lo que esta dentro de este block body tomara los estilos que mande layout.html -->
+
+<div class="form">
+    <div class="card card-body">
+        <form action="/updateGrupo/{{grupoelegido.0}}" method="POST">
+            <div class="form-group">
+                <input type="text" class = "form-control" name="ID_Grupo" placeholder="Numero de Grupo" value="{{grupoelegido.0}}">
+            </div>
+            <div class="form-group">
+                <input type="text" class = "form-control" name="Nombre" placeholder="Nombre de Grupo" value="{{grupoelegido.1}}">
+            </div>
+            <div class="form-group">
+                <input type="text" class = "form-control" name="Aula" placeholder="Aula" value="{{grupoelegido.2}}">
+            </div>
+            <div class="form-group">
+                <input type="text" class = "form-control" name="Turno" placeholder="Turno" value="{{grupoelegido.3}}">
+            </div>
+            <div class="form-group">
+                <input type="text" class = "form-control" name="Jefe_Grupo" placeholder="Jefe del Grupo" value="{{grupoelegido.4}}"> 
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-block">
+                    Actualizar 
+                </button>
+                <a href="javascript: history.go(-1)" class = "btn btn-danger btn-danger">Volver</a>
+            </div>
+ 
+        </form>
+    </div>
+    
+</div>
+
+{% endblock %}
